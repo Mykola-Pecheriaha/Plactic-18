@@ -1,0 +1,23 @@
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-color-light);
+  border: none;
+  cursor: pointer;
+  color: var(--header-text);
+  transition: all 0.3s ease;
+}
+
+.themeToggle:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+.placeholder {
+  width: 40px;
+  height: 40px;
+} 

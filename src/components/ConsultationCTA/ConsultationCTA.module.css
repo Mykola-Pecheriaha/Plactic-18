@@ -1,0 +1,336 @@
+/* 🎯 CONSULTATION CTA КОМПОНЕНТ */
+.consultationCTA {
+  width: 100%;
+  background-color: var(--consultation-cta-bg);
+  padding: 4rem 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+}
+
+/* 🎯 ОСНОВНИЙ КОНТЕНТ */
+.mainContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background-color: var(--consultation-cta-card-bg);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 10px 30px var(--consultation-cta-shadow);
+  border: 1px solid var(--consultation-cta-border);
+}
+
+/* 🎯 ТЕКСТОВА СЕКЦІЯ */
+.textSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--consultation-cta-text-primary);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--consultation-cta-text-secondary);
+  margin: 0 0 2rem 0;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.featureIcon {
+  color: var(--consultation-cta-accent);
+  flex-shrink: 0;
+}
+
+.featureText {
+  font-size: 1rem;
+  color: var(--consultation-cta-text-secondary);
+  font-weight: 500;
+}
+
+/* 🎯 СЕКЦІЯ ДІЙ */
+.actionSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ctaButton {
+  background: linear-gradient(135deg, #52a40e 0%, #3f7b0b 100%);
+  color: #ffffff;
+  border: none;
+  padding: 1.25rem 2.5rem;
+  border-radius: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(82, 164, 14, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(82, 164, 14, 0.4);
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+.buttonIcon {
+  flex-shrink: 0;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.contactIcon {
+  color: var(--consultation-cta-accent);
+  flex-shrink: 0;
+}
+
+.contactText {
+  font-size: 0.9rem;
+  color: var(--consultation-cta-text-secondary);
+  font-weight: 500;
+}
+
+/* 🎯 ДЕКОРАТИВНІ ЕЛЕМЕНТИ */
+.decorativeElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.circle1,
+.circle2,
+.circle3 {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--consultation-cta-accent), transparent);
+  opacity: 0.1;
+}
+
+.circle1 {
+  width: 200px;
+  height: 200px;
+  top: -100px;
+  right: -100px;
+}
+
+.circle2 {
+  width: 150px;
+  height: 150px;
+  bottom: -75px;
+  left: -75px;
+}
+
+.circle3 {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+
+/* 🎯 АДАПТИВНІСТЬ ДЛЯ ПЛАНШЕТІВ */
+@media (max-width: 992px) {
+  .consultationCTA {
+    padding: 3rem 0;
+  }
+
+  .mainContent {
+    gap: 2rem;
+    padding: 2.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* 🎯 АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ */
+@media (max-width: 768px) {
+  .consultationCTA {
+    padding: 2.5rem 0;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .features {
+    align-items: center;
+  }
+
+  .feature {
+    justify-content: center;
+  }
+
+  .ctaButton {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .contactInfo {
+    align-items: center;
+  }
+}
+
+/* 🎯 ДУЖЕ МАЛІ ЕКРАНИ */
+@media (max-width: 480px) {
+  .consultationCTA {
+    padding: 2rem 0;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .mainContent {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .featureText {
+    font-size: 0.9rem;
+  }
+
+  .ctaButton {
+    padding: 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .contactText {
+    font-size: 0.85rem;
+  }
+
+  /* Приховуємо деякі декоративні елементи на малих екранах */
+  .circle3 {
+    display: none;
+  }
+}
+
+/* 🎯 ЕКСТРА МАЛІ ЕКРАНИ */
+@media (max-width: 375px) {
+  .mainContent {
+    padding: 1.25rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .ctaButton {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0.75rem;
+  }
+
+  .buttonIcon {
+    order: -1;
+  }
+} 

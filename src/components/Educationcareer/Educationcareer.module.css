@@ -1,0 +1,343 @@
+.educationcareer {
+  width: 100%;
+  background-color: #e8f5e8;
+  padding: 4rem 0;
+  min-height: 80vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.educationcareer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(232, 245, 232, 0.85);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  line-height: 1.2;
+}
+
+.mainTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #52a40e;
+  border-radius: 2px;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1.7fr 1.3fr;
+  gap: 3rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.galleryColumn {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+  align-self: flex-start;
+  z-index: 10;
+}
+
+.doctorName {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.doctorTitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.textContent {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section:last-child {
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #52a40e;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+  border-bottom: 1px solid rgba(82, 164, 14, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.paragraph {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.truncatedText {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.careerList,
+.coursesList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.careerList li,
+.coursesList li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: #2d3748;
+}
+
+.careerList li::before,
+.coursesList li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #52a40e;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.toggleButton {
+  background-color: #52a40e;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.toggleButton:hover {
+  background-color: #478c0c;
+  transform: translateY(-1px);
+}
+
+.toggleButton:active {
+  transform: translateY(0);
+}
+
+/* Адаптивність для планшетів */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .mainTitle {
+    font-size: 2.25rem;
+  }
+
+  .doctorName {
+    font-size: 1.75rem;
+  }
+
+  .doctorTitle {
+    font-size: 1rem;
+  }
+
+  .contentWrapper {
+    gap: 2rem;
+  }
+
+  .galleryColumn {
+    top: 1.5rem;
+  }
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 767px) {
+  .educationcareer {
+    padding: 2.5rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .doctorName {
+    font-size: 1.5rem;
+  }
+
+  .doctorTitle {
+    font-size: 0.9375rem;
+  }
+
+  .textContent {
+    padding: 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.125rem;
+  }
+
+  .paragraph,
+  .truncatedText,
+  .careerList li,
+  .coursesList li {
+    font-size: 0.9375rem;
+  }
+
+  .toggleButton {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+
+  .galleryColumn {
+    order: -1;
+    position: static !important;
+    width: 100% !important;
+    top: auto !important;
+  }
+
+  .textColumn {
+    min-height: auto;
+  }
+}
+
+/* Дуже маленькі екрани */
+@media (max-width: 480px) {
+  .educationcareer {
+    padding: 2rem 0;
+  }
+
+  .mainTitle {
+    font-size: 1.75rem;
+  }
+
+  .doctorName {
+    font-size: 1.25rem;
+  }
+
+  .doctorTitle {
+    font-size: 0.875rem;
+  }
+
+  .textContent {
+    padding: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+  }
+
+  .paragraph,
+  .truncatedText,
+  .careerList li,
+  .coursesList li {
+    font-size: 0.875rem;
+  }
+
+  .toggleButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Покращення доступності */
+@media (prefers-reduced-motion: reduce) {
+  .toggleButton {
+    transition: none;
+  }
+}
+
+/* Високий контраст для кращої читабельності */
+@media (prefers-contrast: high) {
+  .mainTitle,
+  .doctorName,
+  .doctorTitle,
+  .paragraph,
+  .truncatedText,
+  .careerList li,
+  .coursesList li {
+    color: #1a202c;
+  }
+
+  .sectionTitle {
+    color: #2d5016;
+  }
+
+  .toggleButton {
+    background-color: #2d5016;
+  }
+
+  .toggleButton:hover {
+    background-color: #1a3009;
+  }
+} 

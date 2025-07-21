@@ -1,0 +1,543 @@
+.galleryContainer {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.gallery {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(82, 164, 14, 0.15);
+}
+
+.imageContainer {
+  position: relative;
+  width: calc(100% - 8px);
+  height: calc(100% - 48px);
+  margin: 4px 4px 44px 4px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.imageLoader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #2d3748;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.noImages {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  color: #2d3748;
+  font-size: 1.2rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.02);
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  background-color: rgba(45, 55, 72, 0.8);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 3;
+  color: white;
+}
+
+.navButton:hover {
+  background-color: rgba(45, 55, 72, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.navButton:first-of-type {
+  left: 15px;
+}
+
+.navButton:last-of-type {
+  right: 15px;
+}
+
+.bottomPanel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 2;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(45, 55, 72, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeIndicator {
+  background-color: #52a40e;
+  transform: scale(1.2);
+}
+
+.fullscreenButton {
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border: 1px solid #2d3748;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #2d3748;
+  font-weight: bold;
+}
+
+.fullscreenButton:hover {
+  background-color: #52a40e;
+  color: white;
+  border-color: #52a40e;
+}
+
+.fullscreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding-top: 80px;
+}
+
+.fullscreenContent {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreenImageContainer {
+  position: relative;
+  width: 70%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.imageCounter {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 10;
+}
+
+.toolsPanel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  z-index: 10;
+}
+
+.toolButton {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.toolButton:hover {
+  background-color: rgba(82, 164, 14, 0.8);
+  transform: scale(1.1);
+}
+
+.toolButton.active {
+  background-color: #52a40e;
+}
+
+.fullscreenNavButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.fullscreenNavButton:first-of-type {
+  left: 20px;
+}
+
+.fullscreenNavButton:last-of-type {
+  right: 20px;
+}
+
+.fullscreenNavButton:hover {
+  background-color: rgba(82, 164, 14, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.fullscreenImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  cursor: grab;
+}
+
+.fullscreenImage:active {
+  cursor: grabbing;
+}
+
+.imageTitle {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+}
+
+.thumbnailsContainer {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow-x: auto;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 75px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.activeThumbnail {
+  border-color: #52a40e;
+}
+
+.thumbnail:hover {
+  border-color: white;
+  transform: scale(1.05);
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fullscreenIndicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 5;
+}
+
+.fullscreenIndicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeFullscreenIndicator {
+  background-color: #52a40e;
+  transform: scale(1.2);
+}
+
+.fullscreenIndicator:hover {
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    height: 300px;
+  }
+
+  .imageContainer {
+    height: calc(100% - 40px);
+    margin: 3px 3px 37px 3px;
+  }
+
+  .bottomPanel {
+    height: 37px;
+    padding: 0 10px;
+  }
+
+  .indicator {
+    width: 6px;
+    height: 6px;
+  }
+
+  .fullscreenButton {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+  }
+
+  .navButton {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .navButton:first-of-type {
+    left: 10px;
+  }
+
+  .navButton:last-of-type {
+    right: 10px;
+  }
+
+  .fullscreenOverlay {
+    padding-top: 100px;
+  }
+
+  .fullscreenContent {
+    height: calc(100% - 100px);
+  }
+
+  .fullscreenImageContainer {
+    width: 90%;
+    height: 50%;
+    margin-top: 10px;
+  }
+
+  .toolsPanel {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .toolButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .imageCounter {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .thumbnailsContainer {
+    padding: 5px;
+    bottom: 60px;
+    max-width: 90%;
+  }
+
+  .thumbnail {
+    width: 80px;
+    height: 60px;
+  }
+
+  .fullscreenIndicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  .fullscreenNavButton {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .fullscreenNavButton:first-of-type {
+    left: 10px;
+  }
+
+  .fullscreenNavButton:last-of-type {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    height: 250px;
+  }
+
+  .imageContainer {
+    height: calc(100% - 35px);
+    margin: 2px 2px 33px 2px;
+  }
+
+  .bottomPanel {
+    height: 33px;
+    padding: 0 8px;
+  }
+
+  .indicator {
+    width: 5px;
+    height: 5px;
+  }
+
+  .fullscreenButton {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .navButton {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+  .navButton:first-of-type {
+    left: 8px;
+  }
+
+  .navButton:last-of-type {
+    right: 8px;
+  }
+
+  .fullscreenOverlay {
+    padding-top: 120px;
+  }
+
+  .fullscreenContent {
+    height: calc(100% - 120px);
+  }
+
+  .fullscreenImageContainer {
+    height: 45%;
+    margin-top: 5px;
+  }
+
+  .toolButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .imageCounter {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .thumbnailsContainer {
+    gap: 5px;
+    bottom: 50px;
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 45px;
+  }
+
+  .fullscreenIndicator {
+    width: 6px;
+    height: 6px;
+  }
+
+  .fullscreenNavButton {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+} 
