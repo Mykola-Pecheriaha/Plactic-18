@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "buildCommand": "yarn build",
+  "devCommand": "yarn dev",
+  "installCommand": "yarn install",
+  "framework": "nextjs",
+  "env": {
+    "SMTP_HOST": "smtp.gmail.com",
+    "SMTP_PORT": "465",
+    "SMTP_USER": "@smtp-user",
+    "SMTP_PASSWORD": "@smtp-password",
+    "SMTP_FROM_EMAIL": "@smtp-from-email",
+    "TWILIO_ACCOUNT_SID": "@twilio-account-sid",
+    "TWILIO_AUTH_TOKEN": "@twilio-auth-token",
+    "TWILIO_PHONE_NUMBER": "@twilio-phone-number"
+  }
+} 

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'plactic-18.vercel.app'],
     unoptimized: process.env.NODE_ENV === 'development'
   },
   compiler: {
