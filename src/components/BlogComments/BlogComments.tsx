@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { MessageCircle, HelpCircle, Send, Heart } from 'lucide-react';
+import { MessageCircle, HelpCircle, Send } from 'lucide-react';
 import styles from './BlogComments.module.css';
 
 interface Comment {

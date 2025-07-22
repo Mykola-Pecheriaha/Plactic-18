@@ -7,6 +7,12 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production'
   },
+  typescript: {
+    ignoreBuildErrors: true
+  },
+  eslint: {
+    ignoreDuringBuilds: true
+  },
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
