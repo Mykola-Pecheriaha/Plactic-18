@@ -1,0 +1,97 @@
+name: Setup and Test
+
+on:
+  push:
+    branches: [ main, develop, feature/* ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  setup-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile
+          yarn add -D @testing-library/jest-dom @testing-library/react @testing-library/user-event
+          yarn add -D jest jest-environment-jsdom ts-jest babel-jest
+          yarn add -D @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript
+          yarn add -D identity-obj-proxy
+
+      - name: Create test configuration
+        run: |
+          # Створюємо babel.config.js
+          echo 'module.exports = {
+            presets: [
+              ["@babel/preset-env", { targets: { node: "current" } }],
+              "@babel/preset-typescript",
+              ["@babel/preset-react", { runtime: "automatic" }],
+            ],
+          };' > babel.config.js
+
+          # Створюємо jest.config.js
+          echo 'module.exports = {
+            testEnvironment: "jsdom",
+            setupFilesAfterEnv: ["<rootDir>/src/test/setup.ts"],
+            moduleNameMapper: {
+              "^@/(.*)$": "<rootDir>/src/$1",
+              "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+            },
+            transform: {
+              "^.+\\.(ts|tsx)$": "ts-jest",
+              "^.+\\.(js|jsx)$": ["babel-jest", { presets: ["next/babel"] }],
+            },
+            testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$",
+            moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+            testPathIgnorePatterns: ["/node_modules/", "/.next/"],
+          };' > jest.config.js
+
+          # Створюємо tsconfig.jest.json
+          echo '{
+            "extends": "./tsconfig.json",
+            "compilerOptions": {
+              "jsx": "react-jsx",
+              "isolatedModules": false,
+              "esModuleInterop": true,
+              "types": ["jest", "@testing-library/jest-dom"]
+            }
+          }' > tsconfig.jest.json
+
+          # Створюємо директорію для тестів
+          mkdir -p src/test
+          
+          # Створюємо setup.ts
+          echo 'import "@testing-library/jest-dom";
+          
+          Object.defineProperty(window, "matchMedia", {
+            writable: true,
+            value: jest.fn().mockImplementation(query => ({
+              matches: false,
+              media: query,
+              onchange: null,
+              addListener: jest.fn(),
+              removeListener: jest.fn(),
+              addEventListener: jest.fn(),
+              removeEventListener: jest.fn(),
+              dispatchEvent: jest.fn(),
+            })),
+          });' > src/test/setup.ts
+
+      - name: Run tests
+        run: yarn test
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: coverage/ 

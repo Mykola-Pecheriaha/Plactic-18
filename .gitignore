@@ -27,7 +27,6 @@ yarn-error.log*
 
 # local env files
 .env*.local
-.env.production
 
 # vercel
 .vercel
@@ -39,3 +38,21 @@ next-env.d.ts
 # IDE
 .idea
 .vscode
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
