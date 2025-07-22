@@ -1,0 +1,138 @@
+/* Кольори компонента Diplomcertificates */
+/* Світла та темна тема однакові */
+/* primary: "#52a40e" - Зелений акцент (фон) */
+/* secondary: "#f0f9ff" - Світло-блакитний */
+/* accent: "#52a40e" - Зелений акцент */
+/* text: "#2d3748" - Темний текст */
+
+/* Секція на всю ширину з зеленим фоном */
+.diplomcertificatesSection {
+  width: 100%;
+  background-color: #52a40e;
+  padding: 4rem 0;
+  min-height: 80vh;
+  overflow: hidden;
+}
+
+/* Контейнер з обмеженою шириною */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  width: 100%;
+}
+
+/* Головний заголовок */
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mainTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+/* Обгортка для галереї */
+.galleryWrapper {
+  width: 100%;
+  background-color: #f0f9ff;
+  padding: 2rem 0;
+}
+
+/* Адаптивність для планшетів */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .mainTitle {
+    font-size: 3rem;
+  }
+
+  .galleryWrapper {
+    padding: 3rem 0;
+  }
+}
+
+/* Адаптивність для десктопів */
+@media (min-width: 1024px) {
+  .mainTitle {
+    font-size: 3.5rem;
+  }
+
+  .galleryWrapper {
+    padding: 4rem 0;
+  }
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 480px) {
+  .diplomcertificatesSection {
+    padding: 2rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .galleryWrapper {
+    padding: 1.5rem 0;
+  }
+}
+
+/* Дуже маленькі екрани */
+@media (max-width: 480px) {
+  .diplomcertificatesSection {
+    padding: 2rem 0;
+  }
+
+  .mainTitle {
+    font-size: 1.75rem;
+  }
+
+  .galleryWrapper {
+    padding: 1rem 0;
+  }
+}
+
+/* Покращення доступності */
+@media (prefers-reduced-motion: reduce) {
+  .mainTitle {
+    transition: none;
+  }
+}
+
+/* Високий контраст для кращої читабельності */
+@media (prefers-contrast: high) {
+  .mainTitle {
+    color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .mainTitle::after {
+    background-color: #ffffff;
+    height: 4px;
+  }
+
+  .galleryWrapper {
+    background-color: #ffffff;
+  }
+} 

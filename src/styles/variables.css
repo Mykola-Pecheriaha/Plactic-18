@@ -1,0 +1,18 @@
+html[data-theme="light"] {
+  --header-bg: #b9f08c;
+  --header-text: #1f2937;
+  --header-border: #e5e7eb;
+}
+
+html[data-theme="dark"] {
+  --header-bg: #52a40e;
+  --header-text: #ffffff;
+  --header-border: #374151;
+}
+
+/* Значення за замовчуванням */
+:root {
+  --header-bg: #b9f08c;
+  --header-text: #1f2937;
+  --header-border: #e5e7eb;
+} 

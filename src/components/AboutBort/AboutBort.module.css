@@ -1,0 +1,349 @@
+/* Основні кольори компонента */
+/* Світла тема і темна тема однакові */
+/* primary: "#e8f5e8" - Світло-зелений фон */
+/* secondary: "#f0f9ff" - Світло-блакитний */
+/* accent: "#52a40e" - Зелений акцент */
+/* text: "#2d3748" - Темний текст */
+
+/* Секція на всю ширину */
+.aboutSection {
+  width: 100%;
+  padding: 4rem 0;
+  min-height: 80vh;
+  background-image: url("/images/bigbort/krasivyi-fon-dlia-prezentatsii-78.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Контейнер з обмеженою шириною */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Верхній сектор */
+.upperSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: center;
+}
+
+.textColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Заголовки */
+.mainTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow:
+    1px 1px 2px rgba(110, 255, 117, 0.307),
+    -1px -1px 2px rgba(255, 255, 255, 0.373),
+    1px -1px 2px rgba(255, 255, 255, 0.362),
+    -1px 1px 2px rgba(255, 255, 255, 0.438),
+    0 0 4px rgba(255, 255, 255, 0.378);
+}
+
+/* Текстовий контент */
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.paragraph {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #eaecef;
+  font-weight: 500;
+  margin: 0;
+  text-align: justify;
+  text-shadow:
+    1px 1px 1px rgba(255, 255, 255, 0.515),
+    -1px -1px 1px rgba(26, 25, 25, 0.164),
+    1px -1px 1px rgba(33, 31, 31, 0.29),
+    -1px 1px 1px rgba(26, 25, 25, 0.334),
+    0 0 3px rgba(25, 24, 24, 0.093);
+}
+
+/* Зображення */
+.imageWrapper {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(82, 164, 14, 0.15);
+  background-color: rgba(82, 164, 14, 0.05);
+}
+
+.doctorImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.doctorImage:hover {
+  transform: scale(1.02);
+}
+
+/* Нижній сектор */
+.lowerSection {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(82, 164, 14, 0.2);
+}
+
+/* Інформація про лікаря */
+.doctorInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doctorName {
+  text-align: center;
+}
+
+.brandName {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #408804;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-shadow:
+    1px 1px 2px rgba(255, 255, 255, 0.8),
+    -1px -1px 2px rgba(255, 255, 255, 0.8),
+    1px -1px 2px rgba(255, 255, 255, 0.8),
+    -1px 1px 2px rgba(255, 255, 255, 0.8),
+    0 0 4px rgba(255, 255, 255, 0.6);
+}
+
+.firstName {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #020e23;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow:
+    1px 1px 2px rgba(255, 255, 255, 0.8),
+    -1px -1px 2px rgba(255, 255, 255, 0.8),
+    1px -1px 2px rgba(255, 255, 255, 0.8),
+    -1px 1px 2px rgba(255, 255, 255, 0.8),
+    0 0 4px rgba(255, 255, 255, 0.6);
+}
+
+.lastName {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #021029;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow:
+    1px 1px 2px rgba(255, 255, 255, 0.8),
+    -1px -1px 2px rgba(255, 255, 255, 0.8),
+    1px -1px 2px rgba(255, 255, 255, 0.8),
+    -1px 1px 2px rgba(255, 255, 255, 0.8),
+    0 0 4px rgba(255, 255, 255, 0.6);
+}
+
+/* Філософський текст */
+.philosophyText {
+  display: flex;
+  align-items: center;
+}
+
+.philosophyParagraph {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #ffffff;
+  margin: 0;
+  font-style: italic;
+  text-align: justify;
+  text-shadow:
+    1px 1px 1px rgba(93, 92, 92, 0.905),
+    -1px -1px 1px rgba(19, 19, 19, 0.7),
+    1px -1px 1px rgba(40, 39, 39, 0.7),
+    -1px 1px 1px rgba(255, 255, 255, 0.7),
+    0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+/* Адаптивність для планшетів */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .mainTitle {
+    font-size: 3.5rem;
+  }
+
+  .paragraph,
+  .philosophyParagraph {
+    font-size: 1.25rem;
+  }
+
+  .brandName {
+    font-size: 2.75rem;
+  }
+
+  .firstName,
+  .lastName {
+    font-size: 2.25rem;
+  }
+}
+
+/* Адаптивність для десктопів */
+@media (min-width: 1024px) {
+  .mainTitle {
+    font-size: 4rem;
+  }
+
+  .upperSection,
+  .lowerSection {
+    gap: 4rem;
+  }
+
+  .paragraph,
+  .philosophyParagraph {
+    font-size: 1.375rem;
+  }
+
+  .brandName {
+    font-size: 3rem;
+  }
+
+  .firstName,
+  .lastName {
+    font-size: 2.5rem;
+  }
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 767px) {
+  .aboutSection {
+    padding: 2.5rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .upperSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .imageColumn {
+    order: -1; /* Зображення вгорі на мобільних */
+  }
+
+  .lowerSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .mainTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .paragraph,
+  .philosophyParagraph {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .brandName {
+    font-size: 2rem;
+  }
+
+  .firstName,
+  .lastName {
+    font-size: 1.75rem;
+  }
+
+  .doctorInfo {
+    order: -1; /* Ім'я вгорі на мобільних */
+  }
+}
+
+/* Дуже маленькі екрани */
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 2rem 0;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .paragraph,
+  .philosophyParagraph {
+    font-size: 0.9375rem;
+  }
+
+  .brandName {
+    font-size: 1.75rem;
+  }
+
+  .firstName,
+  .lastName {
+    font-size: 1.5rem;
+  }
+
+  .upperSection,
+  .lowerSection {
+    gap: 1.5rem;
+  }
+}
+
+/* Покращення доступності */
+@media (prefers-reduced-motion: reduce) {
+  .doctorImage {
+    transition: none;
+  }
+}
+
+/* Високий контраст для кращої читабельності */
+@media (prefers-contrast: high) {
+  .mainTitle,
+  .paragraph,
+  .philosophyParagraph,
+  .firstName,
+  .lastName {
+    color: #1a202c;
+  }
+
+  .brandName {
+    color: #2d5016;
+  }
+
+  .lowerSection {
+    border-top-width: 3px;
+    border-top-color: #2d5016;
+  }
+} 

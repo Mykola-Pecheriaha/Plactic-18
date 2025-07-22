@@ -1,0 +1,511 @@
+/* Базові стилі для хедера */
+.topHeader {
+  background-color: var(--header-bg);
+  padding: 0.25rem 0;
+  margin: 0;
+  width: 100%;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  border-bottom: 1px solid var(--header-border);
+}
+
+.topHeader > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainHeader {
+  background-color: var(--header-bg);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--header-border);
+  margin: 0;
+  width: 100%;
+  display: block;
+  position: fixed;
+  top: 32px;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Логотип */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--header-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Навігація */
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  color: var(--header-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.navLink:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/* Контактна інформація */
+.contactInfo {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  white-space: nowrap;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--header-text);
+  font-size: 0.875rem;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  opacity: 0.8;
+}
+
+.contactLink svg {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+}
+
+/* Соціальні посилання */
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+  min-width: 120px;
+}
+
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--header-text);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.socialLinks a:hover {
+  transform: scale(1.1);
+  color: var(--accent-color);
+}
+
+.socialLinks svg {
+  width: 20px;
+  height: 20px;
+  color: currentColor;
+}
+
+/* Бургер кнопка */
+.burgerButton {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1004;
+  transition: transform 0.3s ease;
+}
+
+.burgerButton:hover {
+  transform: scale(1.1);
+}
+
+.burgerButton span {
+  width: 2rem;
+  height: 0.25rem;
+  background: var(--header-text);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  transform-origin: center;
+}
+
+.burgerButton[aria-expanded="true"] {
+  transform: rotate(180deg);
+}
+
+.burgerButton[aria-expanded="true"] span:first-child {
+  transform: translateY(0.7rem) rotate(45deg);
+}
+
+.burgerButton[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-1rem);
+}
+
+.burgerButton[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-0.7rem) rotate(-45deg);
+}
+
+/* Мобільне меню */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 75%;
+  max-width: 400px;
+  background: var(--header-bg);
+  padding: 2rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1003;
+  overflow-y: auto;
+  border-right: 1px solid var(--header-border);
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1002;
+}
+
+.overlayVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.mobileNav .navLink {
+  color: var(--header-text);
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mobileNav .navLink:hover {
+  color: var(--accent-color);
+}
+
+.mobileContactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.mobileSocialLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.mobileSocialLinks a {
+  color: var(--header-text);
+  transition: color 0.2s ease;
+}
+
+.mobileSocialLinks a:hover {
+  color: var(--accent-color);
+}
+
+/* Кнопка консультації */
+.consultationButton {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.consultationButton:hover {
+  background-color: var(--accent-color-dark);
+  transform: translateY(-1px);
+}
+
+.consultationButton:active {
+  transform: translateY(0);
+}
+
+/* Контейнер для правої частини хедера */
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Адаптивність */
+@media (max-width: 1024px) {
+  .contactInfo {
+    gap: 1rem;
+    font-size: 0.75rem;
+  }
+  .nav .consultationButton {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .burgerButton {
+    display: flex;
+    margin-left: 1rem;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .topHeader > div {
+    display: none;
+  }
+
+  .mainHeader {
+    top: 0;
+  }
+
+  .headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+  .headerActions .consultationButton {
+    display: none;
+  }
+
+  .mobileNav {
+    margin-top: 3rem;
+  }
+
+  .mobileNav .navLink {
+    font-size: 1.125rem;
+    padding: 0.5rem 0;
+  }
+
+  .mobileContactInfo {
+    margin-top: 2rem;
+  }
+
+  .mobileSocialLinks {
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+
+  .mobileSocialLinks a {
+    padding: 0.5rem;
+  }
+  .mobileNav .consultationButton {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileMenu {
+    width: 85%;
+    padding: 1.5rem;
+  }
+
+  .mobileNav {
+    margin-top: 3rem;
+  }
+
+  .mobileNav .navLink {
+    font-size: 1.125rem;
+    padding: 0.5rem 0;
+  }
+
+  .mobileContactInfo {
+    margin-top: 2rem;
+  }
+
+  .mobileSocialLinks {
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+
+  .mobileSocialLinks a {
+    padding: 0.5rem;
+  }
+} 
+
+.servicesNavItem {
+  position: relative;
+}
+
+.servicesButton {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.servicesButton.active {
+  color: var(--primary);
+}
+
+.servicesButton.active::after {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
+
+.servicesButton::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid currentColor;
+  margin-left: 5px;
+  transition: transform 0.2s ease;
+}
+
+.servicesDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 1000;
+  min-width: 800px;
+  margin-top: 0.5rem;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCategory {
+  min-width: 200px;
+}
+
+.categoryTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+.servicesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.serviceLink {
+  display: block;
+  padding: 0.5rem 0;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.serviceLink:hover {
+  color: var(--primary);
+}
+
+/* Мобільні стилі */
+.mobileServicesNavItem {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .servicesDropdown {
+    position: static;
+    min-width: auto;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .serviceCategory {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+  }
+
+  .serviceCategory:last-child {
+    border-bottom: none;
+  }
+} 

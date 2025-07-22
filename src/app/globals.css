@@ -1,0 +1,100 @@
+@import '../styles/variables.css';
+@import '../styles/layout.css';
+
+:root {
+  --header-bg: #b9f08c;
+  --header-text: #333333;
+  --header-border: #a3d77c;
+  --accent-color: #52a40e;
+  --accent-color-dark: #478c0c;
+  --accent-color-light: rgba(82, 164, 14, 0.2);
+
+  /* Загальні змінні */
+  --background: #ffffff;
+  --text: #333333;
+  --text-muted: #666666;
+  --border: #e2e8f0;
+  --input-bg: #ffffff;
+  --disabled-bg: #f3f4f6;
+
+  /* BigBord змінні */
+  --bigbord-text-primary: #333333;
+  --bigbord-text-secondary: #4a5568;
+  --bigbord-text-accent: #52a40e;
+  --bigbord-text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  --consultation-button-bg: #52a40e;
+  --consultation-button-text: #ffffff;
+  --consultation-button-hover: #478c0c;
+  --consultation-button-shadow: rgba(82, 164, 14, 0.2);
+}
+
+[data-theme="dark"] {
+  --header-bg: #52a40e;
+  --header-text: #ffffff;
+  --header-border: #478c0c;
+  --accent-color: #b9f08c;
+  --accent-color-dark: #a3d77c;
+  --accent-color-light: rgba(185, 240, 140, 0.2);
+
+  /* Загальні змінні */
+  --background: #1a1a1a;
+  --text: #ffffff;
+  --text-muted: #a0aec0;
+  --border: #2d3748;
+  --input-bg: #2d3748;
+  --disabled-bg: #4a5568;
+
+  /* BigBord змінні для темної теми */
+  --bigbord-text-primary: #ffffff;
+  --bigbord-text-secondary: #e2e8f0;
+  --bigbord-text-accent: #b9f08c;
+  --bigbord-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  --consultation-button-bg: #b9f08c;
+  --consultation-button-text: #333333;
+  --consultation-button-hover: #a3d77c;
+  --consultation-button-shadow: rgba(185, 240, 140, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
