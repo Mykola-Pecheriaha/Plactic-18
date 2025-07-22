@@ -24,7 +24,7 @@ const Footer: FC = () => {
             <Link href="/">Головна</Link>
             <Link href="/services">Послуги</Link>
             <Link href="/about-doctor">Про лікаря</Link>
-            <Link href="/contact">Контакти</Link>
+            <Link href="/contacts">Контакти</Link>
             <Link href="/blog">Блог</Link>
           </nav>
         </div>

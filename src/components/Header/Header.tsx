@@ -260,7 +260,7 @@ const Header: FC = () => {
               Про лікаря
             </Link>
             <Link
-              href="/contact"
+              href="/contacts"
               className={styles.navLink}
               onClick={closeMobileMenu}
             >
@@ -409,7 +409,7 @@ const Header: FC = () => {
             Про лікаря
           </Link>
           <Link
-            href="/contact"
+            href="/contacts"
             className={styles.navLink}
             onClick={closeMobileMenu}
           >
