@@ -1,84 +1,74 @@
 export interface Consultation {
   id: string;
   name: string;
-  phone: string;
-  email?: string;
+  email: string;
   message: string;
+  status: 'pending' | 'completed' | 'cancelled';
   createdAt: string;
-  status: 'new' | 'inProgress' | 'completed';
+  source?: string;
   response?: string;
 }
 
 class ConsultationManager {
   private consultations: Consultation[] = [];
-  private subscribers: (() => void)[] = [];
+  private readonly storageKey = 'consultations';
 
   constructor() {
-    // Завантажуємо дані з localStorage при ініціалізації
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('consultations');
-      if (saved) {
-        this.consultations = JSON.parse(saved);
+      const savedConsultations = localStorage.getItem(this.storageKey);
+      if (savedConsultations) {
+        this.consultations = JSON.parse(savedConsultations);
       }
     }
   }
 
-  private save() {
+  private saveToStorage() {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('consultations', JSON.stringify(this.consultations));
-      // Сповіщаємо інші вкладки про зміни
-      window.dispatchEvent(new Event('consultationsUpdated'));
-      // Викликаємо підписників
-      this.subscribers.forEach(callback => callback());
+      localStorage.setItem(this.storageKey, JSON.stringify(this.consultations));
     }
+  }
+
+  addConsultation(data: Omit<Consultation, 'id' | 'status' | 'createdAt'> & { status?: Consultation['status'], createdAt?: string }): Consultation {
+    const consultation: Consultation = {
+      id: Date.now().toString(),
+      status: data.status || 'pending',
+      createdAt: data.createdAt || new Date().toISOString(),
+      ...data
+    };
+
+    this.consultations.unshift(consultation);
+    this.saveToStorage();
+    return consultation;
   }
 
   getConsultations(): Consultation[] {
-    return [...this.consultations];
+    return this.consultations;
   }
 
-  getConsultation(id: string): Consultation | undefined {
+  getConsultationById(id: string): Consultation | undefined {
     return this.consultations.find(c => c.id === id);
   }
 
-  addConsultation(consultation: Omit<Consultation, 'id' | 'createdAt' | 'status'>) {
-    const newConsultation: Consultation = {
-      ...consultation,
-      id: Math.random().toString(36).substr(2, 9),
-      createdAt: new Date().toISOString(),
-      status: 'new'
-    };
-
-    this.consultations.push(newConsultation);
-    this.save();
-    return newConsultation;
-  }
-
-  updateConsultation(updatedConsultation: Consultation) {
-    const index = this.consultations.findIndex(c => c.id === updatedConsultation.id);
-    if (index !== -1) {
-      this.consultations[index] = updatedConsultation;
-      this.save();
-      return true;
-    }
-    return false;
-  }
-
-  deleteConsultation(id: string) {
+  updateConsultation(id: string, data: Partial<Omit<Consultation, 'id'>>): Consultation | undefined {
     const index = this.consultations.findIndex(c => c.id === id);
-    if (index !== -1) {
-      this.consultations.splice(index, 1);
-      this.save();
-      return true;
-    }
-    return false;
+    if (index === -1) return undefined;
+
+    this.consultations[index] = {
+      ...this.consultations[index],
+      ...data
+    };
+
+    this.saveToStorage();
+    return this.consultations[index];
   }
 
-  subscribe(callback: () => void) {
-    this.subscribers.push(callback);
-    return () => {
-      this.subscribers = this.subscribers.filter(cb => cb !== callback);
-    };
+  deleteConsultation(id: string): boolean {
+    const index = this.consultations.findIndex(c => c.id === id);
+    if (index === -1) return false;
+
+    this.consultations.splice(index, 1);
+    this.saveToStorage();
+    return true;
   }
 }
 
