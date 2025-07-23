@@ -1,7 +1,4 @@
 {
   "version": 2,
-  "framework": "nextjs",
-  "buildCommand": false,
-  "devCommand": false,
-  "installCommand": false
+  "framework": "nextjs"
 } 
