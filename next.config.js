@@ -6,7 +6,7 @@ const nextConfig = {
     forceSwcTransforms: true
   },
   images: {
-    domains: ['localhost', 'plactic-18.vercel.app'],
+    domains: ['localhost', 'plactic-18.vercel.app', 'my-app.vercel.app'],
     unoptimized: process.env.NODE_ENV === 'development'
   },
   compiler: {

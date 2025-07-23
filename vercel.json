@@ -1,4 +1,17 @@
 {
   "version": 2,
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "installCommand": "yarn install",
+  "devCommand": "next dev",
+  "outputDirectory": ".next",
+  "regions": ["fra1"],
+  "env": {
+    "SMTP_USER": "test@gmail.com",
+    "SMTP_PASSWORD": "test_password",
+    "SMTP_HOST": "smtp.gmail.com",
+    "SMTP_PORT": "587",
+    "SMTP_FROM": "test@gmail.com",
+    "NODE_ENV": "production"
+  }
 } 

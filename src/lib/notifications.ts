@@ -1,6 +1,5 @@
 import nodemailer from 'nodemailer';
-import twilio from 'twilio';
-import type { Consultation } from './consultations';
+import type { Consultation } from './client/consultationManager';
 
 interface EmailConfig {
   host: string;
@@ -10,16 +9,9 @@ interface EmailConfig {
   fromEmail: string;
 }
 
-interface SMSConfig {
-  accountSid: string;
-  authToken: string;
-  phoneNumber: string;
-}
-
 export class NotificationService {
   private static instance: NotificationService;
   private emailTransporter: nodemailer.Transporter | null = null;
-  private twilioClient: twilio.Twilio | null = null;
 
   private constructor() {}
 
@@ -34,16 +26,12 @@ export class NotificationService {
     this.emailTransporter = nodemailer.createTransport({
       host: config.host,
       port: config.port,
-      secure: true,
+      secure: config.port === 465,
       auth: {
         user: config.user,
         pass: config.password,
       },
     });
-  }
-
-  initializeSMS(config: SMSConfig) {
-    this.twilioClient = twilio(config.accountSid, config.authToken);
   }
 
   async sendConsultationResponse(consultation: Consultation, response: string) {
@@ -62,22 +50,6 @@ export class NotificationService {
       }
     }
 
-    if (this.twilioClient && process.env.TWILIO_PHONE_NUMBER && consultation.phone) {
-      try {
-        const formattedPhone = consultation.phone.startsWith('+') 
-          ? consultation.phone 
-          : `+380${consultation.phone.replace(/\D/g, '')}`;
-
-        await this.sendSMS({
-          to: formattedPhone,
-          message: response
-        });
-        notifications.push('sms');
-      } catch (error) {
-        console.error('Error sending SMS:', error);
-      }
-    }
-
     return notifications;
   }
 
@@ -87,7 +59,7 @@ export class NotificationService {
     }
 
     const info = await this.emailTransporter.sendMail({
-      from: process.env.SMTP_FROM_EMAIL,
+      from: process.env.SMTP_FROM,
       to: options.to,
       subject: options.subject,
       text: options.text,
@@ -105,19 +77,5 @@ export class NotificationService {
     });
 
     return info;
-  }
-
-  private async sendSMS(options: { to: string; message: string }) {
-    if (!this.twilioClient || !process.env.TWILIO_PHONE_NUMBER) {
-      throw new Error('SMS service not initialized');
-    }
-
-    const result = await this.twilioClient.messages.create({
-      body: options.message,
-      to: options.to,
-      from: process.env.TWILIO_PHONE_NUMBER,
-    });
-
-    return result;
   }
 } 
