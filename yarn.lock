@@ -1699,9 +1699,9 @@
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
 "@types/node@*":
-  version "24.0.15"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.0.15.tgz#f34fbc973e7d64217106e0c59ed8761e6b51381e"
-  integrity sha512-oaeTSbCef7U/z7rDeJA138xpG3NuKc64/rZ2qmUFkFJmnMsAPaluIifqyWd8hSSMxyP9oie3dLAqYPblag9KgA==
+  version "24.1.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.1.0.tgz#0993f7dc31ab5cc402d112315b463e383d68a49c"
+  integrity sha512-ut5FthK5moxFKH2T1CUOC6ctR67rQRvvHdFLCD2Ql6KXmMuCrjsSsRI9UsLCm9M18BMwClv4pn327UvB7eeO1w==
   dependencies:
     undici-types "~7.8.0"
 
@@ -1981,10 +1981,10 @@
     "@vercel/static-config" "3.1.1"
     ts-morph "12.0.0"
 
-"@vercel/next@4.10.4":
-  version "4.10.4"
-  resolved "https://registry.yarnpkg.com/@vercel/next/-/next-4.10.4.tgz#6776d9c73359ecf841bea4d10c858b4c730a8c0c"
-  integrity sha512-1yRcUNHMh4476tomD+eFMeREemXp15aR2IxmkMKJxErgxWgIY285hDbNa+KEwqm7TWHouny09tvyOanknUUf+Q==
+"@vercel/next@4.10.5":
+  version "4.10.5"
+  resolved "https://registry.yarnpkg.com/@vercel/next/-/next-4.10.5.tgz#c86da5ea536f15b3cd6f05ae6afd372abbd90ee7"
+  integrity sha512-fA+9vlNN7LINtl7Q/1rRFy11GT4zSeopAR8xq9CHdGYdzErlHmeV6nuVyAdD5NFgJygukYS95wGqNW9MmQgDug==
   dependencies:
     "@vercel/nft" "0.29.2"
 
@@ -3095,9 +3095,9 @@ edge-runtime@2.5.9:
     time-span "4.0.0"
 
 electron-to-chromium@^1.5.173:
-  version "1.5.189"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.189.tgz#a5c41d2e5c64e2e6cd11bdf4eeeebc1ec8601e08"
-  integrity sha512-y9D1ntS1ruO/pZ/V2FtLE+JXLQe28XoRpZ7QCCo0T8LdQladzdcOVQZH/IWLVJvCw12OGMb6hYOeOAjntCmJRQ==
+  version "1.5.190"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.190.tgz#f0ac8be182291a45e8154dbb12f18d2b2318e4ac"
+  integrity sha512-k4McmnB2091YIsdCgkS0fMVMPOJgxl93ltFzaryXqwip1AaxeDqKCGLxkXODDA5Ab/D+tV5EL5+aTx76RvLRxw==
 
 emittery@^0.13.1:
   version "0.13.1"
@@ -7088,16 +7088,16 @@ v8-to-istanbul@^9.0.1:
     convert-source-map "^2.0.0"
 
 vercel@^44.5.2:
-  version "44.5.2"
-  resolved "https://registry.yarnpkg.com/vercel/-/vercel-44.5.2.tgz#d20095866b817245d6f2310bda39c0560fa1569c"
-  integrity sha512-LLspESIYCnTgGYFBwIBVeTGL+xN9mk0GbSXpf24MP+jSDncNwp0MNFj6vUwEsuhMuAX0BY3lMib7seEKBQqGiA==
+  version "44.5.3"
+  resolved "https://registry.yarnpkg.com/vercel/-/vercel-44.5.3.tgz#7845e22a22e1464d205c04b0becb90c108885555"
+  integrity sha512-8NddNtBRb789GqGci9lhH1nSrZY5qgJGeGdD3KEVhMqRMW+C+sEmcxCfa/epJ45H4hcOzb5PEUwOg/8B63vJyQ==
   dependencies:
     "@vercel/blob" "1.0.2"
     "@vercel/build-utils" "10.6.7"
     "@vercel/fun" "1.1.6"
     "@vercel/go" "3.2.2"
     "@vercel/hydrogen" "1.2.3"
-    "@vercel/next" "4.10.4"
+    "@vercel/next" "4.10.5"
     "@vercel/node" "5.3.6"
     "@vercel/python" "4.8.0"
     "@vercel/redwood" "2.3.4"
