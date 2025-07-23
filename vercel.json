@@ -1,15 +1,17 @@
 {
   "version": 2,
-  "buildCommand": "yarn build",
-  "devCommand": "yarn dev",
-  "installCommand": "yarn install",
   "framework": "nextjs",
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "installCommand": "yarn install",
+  "devCommand": "next dev",
   "env": {
     "SMTP_USER": "test@gmail.com",
     "SMTP_PASSWORD": "test_password",
     "SMTP_HOST": "smtp.gmail.com",
     "SMTP_PORT": "587",
     "SMTP_FROM": "test@gmail.com",
-    "NEXT_PUBLIC_VERCEL_URL": "my-app.vercel.app"
+    "NEXT_PUBLIC_VERCEL_URL": "my-app.vercel.app",
+    "NODE_ENV": "production"
   }
 } 

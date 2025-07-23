@@ -13,11 +13,12 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production'
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true
   },
   typescript: {
-    ignoreBuildErrors: true,
-  }
+    ignoreBuildErrors: true
+  },
+  output: 'standalone'
 }
 
 module.exports = nextConfig 
