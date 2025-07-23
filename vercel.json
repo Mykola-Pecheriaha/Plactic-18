@@ -5,13 +5,11 @@
   "installCommand": "yarn install",
   "framework": "nextjs",
   "env": {
+    "SMTP_USER": "test@gmail.com",
+    "SMTP_PASSWORD": "test_password",
     "SMTP_HOST": "smtp.gmail.com",
-    "SMTP_PORT": "465",
-    "SMTP_USER": "@smtp-user",
-    "SMTP_PASSWORD": "@smtp-password",
-    "SMTP_FROM_EMAIL": "@smtp-from-email",
-    "TWILIO_ACCOUNT_SID": "@twilio-account-sid",
-    "TWILIO_AUTH_TOKEN": "@twilio-auth-token",
-    "TWILIO_PHONE_NUMBER": "@twilio-phone-number"
+    "SMTP_PORT": "587",
+    "SMTP_FROM": "test@gmail.com",
+    "NEXT_PUBLIC_VERCEL_URL": "my-app.vercel.app"
   }
 } 
