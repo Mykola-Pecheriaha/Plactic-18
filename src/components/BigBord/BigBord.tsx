@@ -10,8 +10,8 @@ interface BigBordProps {
 
 const BigBord: React.FC<BigBordProps> = ({ onConsultationClick }) => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.bigBord}>
+    <section className={styles.wrapper}>
+      {/* <div className={styles.bigBord}> */}
         <div className={styles.container}>
           <div className={styles.content}>
             <div className={styles.textContent}>
@@ -83,8 +83,8 @@ const BigBord: React.FC<BigBordProps> = ({ onConsultationClick }) => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    
   )
 }
 

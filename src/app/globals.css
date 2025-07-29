@@ -3,11 +3,17 @@
 
 :root {
   --header-bg: #b9f08c;
+  --doctor-bg: #e8f5e8;
+  --doctor-text-primary: #2d3748;
   --header-text: #333333;
   --header-border: #a3d77c;
   --accent-color: #52a40e;
   --accent-color-dark: #478c0c;
   --accent-color-light: rgba(82, 164, 14, 0.2);
+  --doctor-button-bg: #52a40e; /* Зелена кнопка */
+  --doctor-button-hover: #4a9309; /* Темніший зелений при наведенні */
+  --doctor-button-text: #ffffff; /* Білий текст на кнопці */
+  --doctor-button-shadow: rgba(82, 164, 14, 0.3); /* Тінь кнопки */
 
   /* Загальні змінні */
   --background: #ffffff;
@@ -16,9 +22,14 @@
   --border: #e2e8f0;
   --input-bg: #ffffff;
   --disabled-bg: #f3f4f6;
+   --doctor-button-bg: #52a40e; /* Зелена кнопка */
+  --doctor-button-hover: #4a9309; /* Темніший зелений при наведенні */
+  --doctor-button-text: #ffffff; /* Білий текст на кнопці */
+  --doctor-button-shadow: rgba(82, 164, 14, 0.3); /* Тінь кнопки */
 
   /* BigBord змінні */
   --bigbord-text-primary: #333333;
+ 
   --bigbord-text-secondary: #4a5568;
   --bigbord-text-accent: #52a40e;
   --bigbord-text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
@@ -29,6 +40,8 @@
 }
 
 [data-theme="dark"] {
+  --doctor-bg: #e8f5e8;
+  --doctor-text-primary: #2d3748;
   --header-bg: #52a40e;
   --header-text: #ffffff;
   --header-border: #478c0c;
@@ -38,6 +51,7 @@
 
   /* Загальні змінні */
   --background: #1a1a1a;
+  --doctor-bg: #e8f5e8; /* Світло-зелений фон */
   --text: #ffffff;
   --text-muted: #a0aec0;
   --border: #2d3748;
@@ -45,7 +59,9 @@
   --disabled-bg: #4a5568;
 
   /* BigBord змінні для темної теми */
-  --bigbord-text-primary: #ffffff;
+  /* --bigbord-text-primary: #ffffff; */
+  --doctor-text-primary: #2d3748; /* Темний основний текст */
+  --doctor-bg: #e8f5e8; /* Світло-зелений фон */
   --bigbord-text-secondary: #e2e8f0;
   --bigbord-text-accent: #b9f08c;
   --bigbord-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -61,11 +77,11 @@
   margin: 0;
 }
 
-html {
+html, body {
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
-
 body {
   margin: 0;
   padding: 0;

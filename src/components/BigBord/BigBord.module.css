@@ -1,11 +1,22 @@
 .wrapper {
   width: 100%;
+  min-height: 100vh;
   position: relative;
   background-image: url("/images/bigbort/BigBort5.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  position: relative;
 }
 
 .bigBord {

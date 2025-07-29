@@ -8,7 +8,7 @@ README.md
 .env.local
 .env.development
 .env.production
-*.log
+.log
 .vscode
 .idea
 coverage

@@ -1,0 +1,206 @@
+/* 🎯 DOCTOR КОМПОНЕНТ З ФІОЛЕТОВИМ ФОНОМ */
+.doctor {
+  width: 100vw;
+  min-width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: var(--doctor-bg);
+  padding: 4rem 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* 🎯 ЛІВА ЧАСТИНА - ІМ'Я ЛІКАРЯ */
+.nameSection {
+  display: flex;
+  flex-direction: column; /* 👈 Змінено на колонку */
+  justify-content: center;
+  align-items: center;
+}
+
+.doctorName {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--doctor-text-primary);
+  text-shadow: var(--doctor-text-shadow);
+  text-align: center;
+  margin: 0;
+}
+
+.doctorButton {
+  background-color: var(--doctor-button-bg);
+  color: var(--doctor-button-text);
+  border: none;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--doctor-button-shadow);
+  margin-top: 20px; /* 👈 20px під ім'ям */
+  white-space: nowrap;
+}
+
+.doctorbutton:hover {
+  background-color: var(--doctor-button-hover);
+  transform: translatey(-2px);
+  box-shadow: 0 6px 20px var(--doctor-button-shadow);
+}
+
+/* 🎯 ПРАВА ЧАСТИНА - ТЕКСТ */
+.textSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.textContent {
+  max-width: 100%;
+}
+
+.introText {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--doctor-text-primary);
+  text-shadow: var(--doctor-text-shadow);
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--doctor-text-primary);
+  text-shadow: var(--doctor-text-shadow);
+  margin-bottom: 1.25rem;
+}
+
+.highlight {
+  color: var(--doctor-text-primary);
+  font-weight: 700;
+}
+
+/* 🎯 АДАПТИВНІСТЬ ДЛЯ ПЛАНШЕТІВ */
+@media (max-width: 992px) {
+  .content {
+    gap: 2.5rem;
+  }
+
+  .doctorName {
+    font-size: 2.5rem;
+  }
+
+  .introText {
+    font-size: 1.075rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+}
+
+/* 🎯 АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ */
+@media (max-width: 768px) {
+  .doctor {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .doctorName {
+    font-size: 2.25rem;
+    margin-bottom: 0; /* 👈 Прибрано margin-bottom */
+    word-break: break-word;
+  }
+
+  .doctorButton {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px; /* 👈 Залишаємо 20px */
+  }
+
+  .introText {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+}
+
+/* 🎯 ДУЖЕ МАЛІ ЕКРАНИ */
+@media (max-width: 480px) {
+  .doctor {
+    padding: 2.5rem 0;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .doctorName {
+    font-size: 1.875rem;
+  }
+
+  .doctorButton {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .introText {
+    font-size: 0.95rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+}
+
+/* 🎯 ЕКСТРА МАЛІ ЕКРАНИ */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 0.25rem; /* 👈 Мінімальний padding */
+  }
+
+  .doctorName {
+    font-size: 1.5rem;
+  }
+
+  .introText {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+}
