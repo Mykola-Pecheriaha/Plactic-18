@@ -1,0 +1,459 @@
+.galleryContainer {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.gallery {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+  position: relative;
+  width: calc(100% - 8px); /* 👈 Відступи для бокових рамочок */
+  height: calc(100% - 48px); /* 👈 Відступ для нижньої рамочки */
+  margin: 4px 4px 44px 4px; /* 👈 Тонкі рамочки зверху і по бокам, широка знизу */
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.imageLoader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.noImages {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 👈 Змінено на cover щоб займало все поле */
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.02);
+}
+
+/* 👈 Навігаційні кнопки тепер поверх зображення */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 3;
+  color: var(--gallery-accent);
+}
+
+.navButton:hover {
+  background-color: rgb(115, 112, 112);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.navButton:first-of-type {
+  left: 15px; 
+  color: #6d6b6b;;
+  /* 👈 Ліва кнопка */
+}
+
+.navButton:last-of-type {
+  right: 15px;
+  color: #6d6b6b;
+   /* 👈 Права кнопка */
+}
+
+/* 👈 Нижня панель з індикаторами та кнопкою fullscreen */
+.bottomPanel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 2;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #918f8f;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeIndicator {
+  background-color: #403f3f;
+  transform: scale(1.2);
+}
+
+.fullscreenButton {
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #6d6b6b;;
+  font-weight: bold;
+}
+
+.fullscreenButton:hover {
+  background-color: var(--gallery-accent);
+  color: rgb(128, 122, 122);
+  border-color: var(--gallery-accent);
+}
+
+/* 👈 Повноекранний режим */
+.fullscreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.fullscreenContent {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreenImageContainer {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreenImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.imageTitle {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.thumbnailsButton {
+  position: absolute;
+  top: 20px;
+  right: 70px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.thumbnailsButton:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.fullscreenNavButton {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+  transition: all 0.3s ease;
+}
+
+.fullscreenNavButton:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.thumbnailsContainer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow-x: auto;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 75px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeThumbnail {
+  border-color: white;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fullscreenIndicators {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  z-index: 5;
+}
+
+.fullscreenIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 3px;
+}
+
+.activeFullscreenIndicator {
+  background-color: white;
+}
+
+/* 👈 Адаптивність */
+@media (max-width: 768px) {
+  .gallery {
+    height: 300px;
+  }
+
+  .imageContainer {
+    height: calc(100% - 40px);
+    margin: 3px 3px 37px 3px;
+  }
+
+  .bottomPanel {
+    height: 37px;
+    padding: 0 10px;
+  }
+
+  .indicator {
+    width: 6px;
+    height: 6px;
+  }
+
+  .fullscreenButton {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+  }
+
+  .navButton {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .navButton:first-of-type {
+    left: 10px;
+  }
+
+  .navButton:last-of-type {
+    right: 10px;
+  }
+
+  .fullscreenContent {
+    width: 95%;
+    height: 95%;
+  }
+
+  .fullscreenImageContainer {
+    width: 90%;
+    height: 70%;
+  }
+
+  .thumbnailsContainer {
+    padding: 5px;
+  }
+
+  .thumbnail {
+    width: 80px;
+    height: 60px;
+  }
+
+  .thumbnailsButton {
+    right: 65px;
+  }
+
+  .fullscreenIndicator {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    height: 250px;
+  }
+
+  .imageContainer {
+    height: calc(100% - 35px);
+    margin: 2px 2px 33px 2px;
+  }
+
+  .bottomPanel {
+    height: 33px;
+    padding: 0 8px;
+  }
+
+  .indicator {
+    width: 5px;
+    height: 5px;
+  }
+
+  .fullscreenButton {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .navButton {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+  .navButton:first-of-type {
+    left: 8px;
+  }
+
+  .navButton:last-of-type {
+    right: 8px;
+  }
+
+  .thumbnailsContainer {
+    gap: 5px;
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 45px;
+  }
+
+  .thumbnailsButton {
+    right: 60px;
+  }
+
+  .fullscreenIndicator {
+    width: 5px;
+    height: 5px;
+  }
+}

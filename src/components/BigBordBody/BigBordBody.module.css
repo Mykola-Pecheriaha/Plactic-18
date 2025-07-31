@@ -1,0 +1,194 @@
+/* 🎯 BIG BORD BODY КОМПОНЕНТ */
+.bigBordBody {
+  width: 100vw;
+  min-width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: var(--doctor-bg);
+  padding: 4rem 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* 🎯 ЗАГОЛОВОК */
+.titleSection {
+  text-align: center;
+  color: var(--doctor-text-primary);
+  margin-bottom: 2.5rem; /* 👈 Відступ від заголовка до контенту */
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+ color: var(--doctor-text-primary);; /* 👈 Темний колір тексту як у Gallery */
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* 🎯 ОСНОВНИЙ КОНТЕНТ */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 👈 Рівні частини */
+  gap: 4rem;
+  align-items: center;
+  
+}
+
+/* 🎯 ЛІВА ЧАСТИНА - ТЕКСТ */
+.textSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.textContent {
+  max-width: 100%;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--doctor-text-primary); /* 👈 Зелений акцент як у Gallery */
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.servicesList {
+  list-style: none;
+  margin: 0 0 2.5rem 0;
+  padding: 0;
+  color: var(--doctor-text-primary);
+}
+
+.serviceItem {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--gallery-text-secondary); /* 👈 Сірий колір тексту як у Gallery */
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.serviceItem::before {
+  content: "•";
+  color: var(--gallery-accent); /* 👈 Зелені маркери як у Gallery */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.3rem;
+}
+
+.serviceButton {
+  background-color: var(--doctor-button-bg); 
+  color: var(--doctor-button-text); 
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(107, 70, 193, 0.3);
+}
+
+.serviceButton:hover {
+  background-color: var(--doctor-button-hover);
+  transform: translatey(-3px);
+  box-shadow: 0 6px 20px var(--doctor-button-shadow);
+}
+
+/* 🎯 ПРАВА ЧАСТИНА - ГАЛЕРЕЯ */
+.gallerySection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🎯 АДАПТИВНІСТЬ ДЛЯ ПЛАНШЕТІВ */
+@media (max-width: 992px) {
+  .content {
+    gap: 3rem;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .serviceItem {
+    font-size: 1rem;
+  }
+}
+
+/* 🎯 АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ */
+@media (max-width: 768px) {
+  .bigBordBody {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .titleSection {
+    margin-bottom: 2rem; /* 👈 Менший відступ на мобільних */
+  }
+
+  .mainTitle {
+    font-size: 1.75rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr; /* 👈 Одна колонка на мобільних */
+    gap: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .serviceButton {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* 🎯 ДУЖЕ МАЛІ ЕКРАНИ */
+@media (max-width: 480px) {
+  .bigBordBody {
+    padding: 2.5rem 0;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .mainTitle {
+    font-size: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.25rem;
+  }
+
+  .serviceItem {
+    font-size: 0.95rem;
+  }
+}
