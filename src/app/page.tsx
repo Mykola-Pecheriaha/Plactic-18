@@ -9,6 +9,7 @@ import BigBordFace from "@/components/BigBordFace/BigBordFace"
 import BigBordBody from "@/components/BigBordBody/BigBordBody"
 import BigClinic from "@/components/BigClinic/BigClinic"
 import Testimonials from "@/components/Testimonials/Testimonials"
+import ConsultationCTA from '@/components/ConsultationCTA/ConsultationCTA';
 
 export default function Home() {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function Home() {
         <BigBordBody />
         <BigClinic />
         <Testimonials />
+        <ConsultationCTA />
       <ConsultationForm 
         isOpen={isConsultationFormOpen} 
         onClose={() => setIsConsultationFormOpen(false)} 
