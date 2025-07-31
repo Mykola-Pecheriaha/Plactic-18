@@ -16,9 +16,9 @@
 
 .imageContainer {
   position: relative;
-  width: calc(100% - 8px); /* 👈 Відступи для бокових рамочок */
-  height: calc(100% - 48px); /* 👈 Відступ для нижньої рамочки */
-  margin: 4px 4px 44px 4px; /* 👈 Тонкі рамочки зверху і по бокам, широка знизу */
+  width: calc(100% - 8px);
+  height: calc(100% - 48px);
+  margin: 4px 4px 44px 4px;
   overflow: hidden;
   border-radius: 4px;
 }
@@ -53,7 +53,7 @@
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 👈 Змінено на cover щоб займало все поле */
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -61,14 +61,13 @@
   transform: scale(1.02);
 }
 
-/* 👈 Навігаційні кнопки тепер поверх зображення */
 .navButton {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 35px;
   height: 35px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(110, 107, 107, 0.9);
   border: none;
   border-radius: 50%;
   display: flex;
@@ -82,23 +81,18 @@
 }
 
 .navButton:hover {
-  background-color: rgb(115, 112, 112);
+  background-color: rgba(255, 255, 255, 1);
   transform: translateY(-50%) scale(1.1);
 }
 
 .navButton:first-of-type {
-  left: 15px; 
-  color: #6d6b6b;
-  /* 👈 Ліва кнопка */
+  left: 15px;
 }
 
 .navButton:last-of-type {
   right: 15px;
-  color: #6d6b6b;
-   /* 👈 Права кнопка */
 }
 
-/* 👈 Нижня панель з індикаторами та кнопкою fullscreen */
 .bottomPanel {
   position: absolute;
   bottom: 0;
@@ -125,13 +119,13 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #918f8f;
+  background-color: #837e7e;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .activeIndicator {
-  background-color: #403f3f;
+   background-color: #ccc8c8;
   transform: scale(1.2);
 }
 
@@ -139,7 +133,7 @@
   width: 28px;
   height: 28px;
   background-color: transparent;
-  border: 1px solid #ccc;
+  border: 1px solid #656262;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -147,17 +141,16 @@
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: #6d6b6b;;
+  color: #757070;
   font-weight: bold;
 }
 
 .fullscreenButton:hover {
   background-color: var(--gallery-accent);
-  color: rgb(128, 122, 122);
+  color: rgb(136, 133, 133);
   border-color: var(--gallery-accent);
 }
 
-/* 👈 Повноекранний режим */
 .fullscreenOverlay {
   position: fixed;
   top: 0;
@@ -329,7 +322,6 @@
   background-color: white;
 }
 
-/* 👈 Адаптивність */
 @media (max-width: 768px) {
   .gallery {
     height: 300px;

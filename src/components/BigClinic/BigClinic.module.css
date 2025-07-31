@@ -1,5 +1,5 @@
-/* 🎯 BIG BORD FACE КОМПОНЕНТ */
-.bigBordFace {
+/* 🎯 BIG CLINIC КОМПОНЕНТ */
+.bigClinic {
   width: 100vw;
   min-width: 100vw;
   left: 50%;
@@ -55,7 +55,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
 
 .textContent {
@@ -70,26 +69,6 @@
   line-height: 1.2;
 }
 
-.subtitle {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--doctor-text-primary); /* 👈 Світло-фіолетовий колір */
-}
-
-.sectionSymbol {
-  font-size: 1.5rem;
-  color: var(--doctor-text-primary); /* 👈 Білий акцент */
-  font-weight: 700;
-}
-
-.sectionText {
-  color: var(--doctor-text-primary);
-}
-
 .servicesList {
   list-style: none;
   margin: 0 0 2.5rem 0;
@@ -99,7 +78,7 @@
 .serviceItem {
   font-size: 1.125rem;
   line-height: 1.6;
-  color: var(--doctor-text-primary); /* 👈 Білий колір тексту */
+  color: var(--doctor-text-primary); /* 👈 Сірий колір тексту як у Gallery */
   margin-bottom: 1rem;
   padding-left: 1.5rem;
   position: relative;
@@ -107,7 +86,7 @@
 
 .serviceItem::before {
   content: "•";
-  color: var(--doctor-text-primary); /* 👈 Білі маркери */
+  color: var(--gallery-accent); /* 👈 Зелені маркери як у Gallery */
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -150,10 +129,6 @@
     font-size: 1.75rem;
   }
 
-  .subtitle {
-    font-size: 1.125rem;
-  }
-
   .serviceItem {
     font-size: 1rem;
   }
@@ -161,7 +136,7 @@
 
 /* 🎯 АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ */
 @media (max-width: 768px) {
-  .bigBordFace {
+  .bigClinic {
     padding: 3rem 0;
   }
 
@@ -187,11 +162,6 @@
     text-align: center;
   }
 
-  .subtitle {
-    justify-content: center;
-    text-align: center;
-  }
-
   .serviceButton {
     width: 100%;
     padding: 1rem;
@@ -200,7 +170,7 @@
 
 /* 🎯 ДУЖЕ МАЛІ ЕКРАНИ */
 @media (max-width: 480px) {
-  .bigBordFace {
+  .bigClinic {
     padding: 2.5rem 0;
   }
 
@@ -214,10 +184,6 @@
 
   .sectionTitle {
     font-size: 1.25rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
   }
 
   .serviceItem {

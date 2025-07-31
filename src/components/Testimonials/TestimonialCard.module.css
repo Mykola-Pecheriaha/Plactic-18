@@ -1,0 +1,103 @@
+.card {
+  background-color: #ffffff; /* 👈 Білий фон для карток */
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(82, 164, 14, 0.1);
+  min-height: 250px; /* 👈 Змінено з height: 100% на min-height */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(82, 164, 14, 0.15);
+  border-color: rgba(82, 164, 14, 0.2);
+}
+
+.rating {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  color: #d1d5db; /* 👈 Сірий колір для незаповнених зірок */
+  transition: color 0.3s ease;
+}
+
+.filled {
+  color: #fbbf24; /* 👈 Жовтий колір для заповнених зірок */
+}
+
+.text {
+  flex-grow: 1;
+  color: #4a5568; /* 👈 Фіксований сірий колір для кращої читабельності */
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer {
+  border-top: 1px solid rgba(82, 164, 14, 0.15);
+  padding-top: 1rem;
+}
+
+.name {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #2d3748; /* 👈 Фіксований темний колір */
+  font-size: 1rem;
+}
+
+.procedure {
+  font-size: 0.875rem;
+  color: #52a40e; /* 👈 Фіксований зелений колір */
+  font-weight: 500;
+}
+
+/* 🎯 АДАПТИВНІСТЬ */
+@media (max-width: 768px) {
+  .card {
+    padding: 1.25rem;
+  }
+
+  .text {
+    font-size: 0.9rem;
+  }
+
+  .name {
+    font-size: 0.95rem;
+  }
+
+  .procedure {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .rating {
+    margin-bottom: 0.75rem;
+  }
+
+  .star {
+    width: 14px;
+    height: 14px;
+  }
+
+  .text {
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .footer {
+    padding-top: 0.75rem;
+  }
+}

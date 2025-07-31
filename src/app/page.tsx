@@ -7,6 +7,8 @@ import Doctor from "@/components/Doctor/Doctor"
 import SideBySideGallery from "@/components/SideBySideGallery/SideBySideGallery"
 import BigBordFace from "@/components/BigBordFace/BigBordFace"
 import BigBordBody from "@/components/BigBordBody/BigBordBody"
+import BigClinic from "@/components/BigClinic/BigClinic"
+import Testimonials from "@/components/Testimonials/Testimonials"
 
 export default function Home() {
   const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false);
@@ -18,6 +20,8 @@ export default function Home() {
         <SideBySideGallery />
         <BigBordFace />
         <BigBordBody />
+        <BigClinic />
+        <Testimonials />
       <ConsultationForm 
         isOpen={isConsultationFormOpen} 
         onClose={() => setIsConsultationFormOpen(false)} 
