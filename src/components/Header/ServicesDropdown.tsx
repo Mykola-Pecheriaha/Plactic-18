@@ -14,7 +14,7 @@ const servicesData: ServiceCategory[] = [
   {
     title: 'Пластика обличчя',
     items: [
-      { name: 'Підтяжка обличчя', path: '/services/face-lift' },
+      { name: 'Підтяжка обличчя', path: '/services/facelift-section' },
       { name: 'Блефаропластика', path: '/services/blepharoplasty' },
       { name: 'Корекція вух', path: '/services/ear-correction' },
     ],

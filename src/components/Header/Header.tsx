@@ -10,6 +10,7 @@ import ServicesDropdown from './ServicesDropdown'
 const Header: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false)
+  const [isMobileServicesMenuOpen, setIsMobileServicesMenuOpen] = useState(false)
   const servicesMenuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -55,16 +56,23 @@ const Header: FC = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
     if (isServicesMenuOpen) setIsServicesMenuOpen(false)
+    if (isMobileServicesMenuOpen) setIsMobileServicesMenuOpen(false)
   }
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false)
     setIsServicesMenuOpen(false)
+    setIsMobileServicesMenuOpen(false)
   }
 
   const toggleServicesMenu = (event: React.MouseEvent) => {
     event.stopPropagation()
     setIsServicesMenuOpen(!isServicesMenuOpen)
+  }
+
+  const toggleMobileServicesMenu = (event: React.MouseEvent) => {
+    event.stopPropagation()
+    setIsMobileServicesMenuOpen(!isMobileServicesMenuOpen)
   }
 
   const closeServicesMenu = () => {
@@ -390,15 +398,15 @@ const Header: FC = () => {
           <div className={styles.mobileServicesNavItem}>
             <button
               className={`${styles.navLink} ${styles.servicesButton}`}
-              onClick={toggleServicesMenu}
-              aria-expanded={isServicesMenuOpen}
+              onClick={toggleMobileServicesMenu}
+              aria-expanded={isMobileServicesMenuOpen}
               aria-haspopup="true"
             >
               Послуги
             </button>
             <ServicesDropdown
-              isOpen={isServicesMenuOpen}
-              onClose={closeServicesMenu}
+              isOpen={isMobileServicesMenuOpen}
+              onClose={() => setIsMobileServicesMenuOpen(false)}
             />
           </div>
           <Link

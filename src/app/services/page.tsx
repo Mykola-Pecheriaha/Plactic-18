@@ -8,7 +8,7 @@ const servicesData = [
   {
     category: 'Пластика обличчя',
     items: [
-      { title: 'Підтяжка обличчя', slug: 'face-lift', image: '/images/services/face-1.jpg' },
+      { title: 'Підтяжка обличчя', slug: 'facelift-section', image: '/images/services/face-1.jpg' },
       { title: 'Блефаропластика', slug: 'blepharoplasty', image: '/images/services/face-2.jpg' },
       { title: 'Корекція вух', slug: 'ear-correction', image: '/images/services/face-3.jpg' },
     ]

@@ -42,7 +42,7 @@ const BigBordFace: React.FC<BigBordFaceProps> = ({ backgroundColor }) => {
                 <li className={styles.serviceItem}>Результат зберігається 10-15 років</li>
               </ul>
 
-              <Link href="/services/face" className={styles.serviceButton}>
+              <Link href="/services/facelift-section" className={styles.serviceButton}>
                 Дізнатись більше про пластику обличчя
               </Link>
             </div>
