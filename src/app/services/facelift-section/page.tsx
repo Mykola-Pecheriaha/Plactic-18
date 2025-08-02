@@ -1,6 +1,6 @@
 import type React from "react"
 import FaceliftSection from "@/components/FaceliftSection/FaceliftSection"
-// import FaceliftDetails from "@/components/FaceliftDetails/FaceliftDetails"
+import FaceliftDetails from "@/components/FaceliftDetails/FaceliftDetails"
 // import FaceLiftPreparation from "@/components/FaceLiftPreparation/FaceLiftPreparation"
 // import FaceliftFAQ from "@/components/FaceliftFAQ/FaceliftFAQ"
 
@@ -11,7 +11,7 @@ const FaceliftSectionPage: React.FC = () => {
       <FaceliftSection backgroundColor="#EDF5E8FF" />
 
       {/* Додаємо компонент FaceliftDetails */}
-      {/* <FaceliftDetails backgroundColor="#f0f9ff" /> */}
+      <FaceliftDetails backgroundColor="#f0f9ff" />
 
       {/* Додаємо компонент FaceLiftPreparation */}
       {/* <FaceLiftPreparation backgroundColor="#e8f5e8" /> */}
